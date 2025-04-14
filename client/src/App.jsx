@@ -1,8 +1,7 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import "./App.css";
 
 function App() {
-  const [url, setUrl] = useState("https://www.google.com");
 
   useEffect(() => {
     if (window.electronAPI) {
