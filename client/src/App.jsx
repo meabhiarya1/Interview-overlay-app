@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import "./App.css";
 
 function App() {
@@ -18,9 +18,14 @@ function App() {
 
   return (
     <div className="app">
-      <div className="controls" style={{ WebkitAppRegion: "drag" }}>
-        <button onClick={handleBack}>Back</button>
-        <button onClick={handleNewTab}>New Tab</button>
+      {/* Make the control bar draggable */}
+      <div className="controls">
+        <button onClick={handleBack} style={{ WebkitAppRegion: "no-drag" }}>
+          Back
+        </button>
+        <button onClick={handleNewTab} style={{ WebkitAppRegion: "no-drag" }}>
+          New Tab
+        </button>
       </div>
       <webview
         src="https://www.google.com"
