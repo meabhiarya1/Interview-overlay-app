@@ -1,5 +1,6 @@
 {
-  "name": "interview-overlay-app",
+  "name": "helping-hand",
+  "productName": "Helping Hand",
   "version": "1.0.0",
   "main": "main.js",
   "scripts": {
