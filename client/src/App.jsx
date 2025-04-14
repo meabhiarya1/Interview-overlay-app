@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
@@ -15,6 +15,17 @@ function App() {
     const newWindow = window.open(url, "_blank", "width=800,height=600");
     if (newWindow) newWindow.focus();
   };
+
+  useEffect(() => {
+    if (window.electronAPI) {
+      window.electronAPI.onGoBack(() => {
+        const webview = document.querySelector("webview");
+        if (webview && webview.canGoBack()) {
+          webview.goBack();
+        }
+      });
+    }
+  }, []);
 
   return (
     <div className="app">

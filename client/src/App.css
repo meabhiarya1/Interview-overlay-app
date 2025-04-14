@@ -1,21 +1,27 @@
 .app {
-  -webkit-user-select: none; /* Vendor-prefixed version for Safari and Chrome */
-  user-select: none; /* Standard version for modern browsers */
-  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
-.controls {
-  padding: 10px;
-  background: #333;
-  color: white;
+.frame-controls {
+  position: absolute;
+  top: 10px; /* Distance from the top of the window */
+  left: 10px; /* Distance from the left edge of the window */
+  z-index: 100; /* Makes sure the buttons are on top */
   display: flex;
-  gap: 8px;
-  -webkit-app-region: drag;
-  cursor: grab;
+  gap: 10px;
 }
 
-.controls input,
-.controls button {
-  -webkit-app-region: no-drag;
+.frame-controls button {
+  padding: 5px 10px;
+  background-color: #333;
+  color: white;
+  border: none;
   cursor: pointer;
+  font-size: 16px;
+}
+
+.frame-controls button:hover {
+  background-color: #555;
 }
