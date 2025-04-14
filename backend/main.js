@@ -47,13 +47,19 @@ function createWindow() {
     {
       label: "Back",
       click: () => {
-        mainWindow.webContents.send("go-back"); // send message to renderer
+        const focusedWindow = BrowserWindow.getFocusedWindow();
+        if (focusedWindow) {
+          focusedWindow.webContents.send("go-back");
+        }
       },
     },
     {
       label: "Forward",
       click: () => {
-        mainWindow.webContents.send("go-forward");
+        const focusedWindow = BrowserWindow.getFocusedWindow();
+        if (focusedWindow) {
+          focusedWindow.webContents.send("go-forward");
+        }
       },
     },
 
@@ -63,14 +69,17 @@ function createWindow() {
         const newWin = new BrowserWindow({
           width: 800,
           height: 600,
+          alwaysOnTop: false,
+          frame: true,
+          transparent: false,
           webPreferences: {
             preload: path.join(__dirname, "preload.js"),
             nodeIntegration: true,
-            contextIsolation: false,
+            contextIsolation: true,
             webviewTag: true,
           },
         });
-        newWin.loadURL(path.join("uploads", "build", "index.html"));
+        newWin.loadFile(path.join("uploads", "build", "index.html"));
       },
     },
   ];

@@ -6,16 +6,12 @@ function App() {
     if (window.electronAPI) {
       window.electronAPI.onGoBack(() => {
         const webview = document.querySelector("webview");
-        if (webview && webview.canGoBack()) {
-          webview.goBack();
-        }
+        if (webview?.canGoBack()) webview.goBack();
       });
 
       window.electronAPI.onGoForward(() => {
         const webview = document.querySelector("webview");
-        if (webview && webview.canGoForward()) {
-          webview.goForward();
-        }
+        if (webview?.canGoForward()) webview.goForward();
       });
     }
   }, []);
