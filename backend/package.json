@@ -1,0 +1,30 @@
+{
+  "name": "interview-overlay-app",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "concurrently \"npm:serve\" \"npm:electron\"",
+    "serve": "cd ../client && npm run dev",
+    "electron": "wait-on http://localhost:5173 && electron .",
+    "build": "cd ../client && npm run build",
+     "dev": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meabhiarya1/Interview-overlay-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/meabhiarya1/Interview-overlay-app/issues"
+  },
+  "homepage": "https://github.com/meabhiarya1/Interview-overlay-app#readme",
+  "description": "",
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "electron": "^35.1.5",
+    "electron-packager": "^17.1.2",
+    "wait-on": "^8.0.3"
+  }
+}
