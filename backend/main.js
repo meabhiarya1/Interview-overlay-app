@@ -18,7 +18,8 @@ function createWindow() {
     },
   });
 
-  mainWindow.loadURL("http://localhost:5173");
+  mainWindow.loadFile(path.join(__dirname, "dist", "index.html"));
+
   // mainWindow.webContents.openDevTools();
 
   // Define top-level menu items including Back and New Tab
@@ -69,7 +70,7 @@ function createWindow() {
             webviewTag: true,
           },
         });
-        newWin.loadURL("http://localhost:5173");
+        newWin.loadURL(path.join(__dirname, "dist", "index.html"));
       },
     },
   ];

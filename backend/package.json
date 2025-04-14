@@ -3,11 +3,10 @@
   "version": "1.0.0",
   "main": "main.js",
   "scripts": {
-    "start": "concurrently \"npm:serve\" \"npm:electron\"",
-    "serve": "cd ../client && npm run dev",
-    "electron": "wait-on http://localhost:5173 && electron .",
+    "start": "electron .",
+    "postinstall": "cd ../client && npm install",
     "build": "cd ../client && npm run build",
-     "dev": "electron ."
+    "dev": "npm run build && npm start"
   },
   "repository": {
     "type": "git",
