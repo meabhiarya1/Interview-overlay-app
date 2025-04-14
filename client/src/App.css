@@ -1,4 +1,4 @@
-#root {
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -39,11 +39,12 @@
 
 .read-the-docs {
   color: #888;
-}
+} */
 
 .app {
-  width: 100vw;
-  height: 100vh;
+  /* width: 100vw;
+  height: 100vh; */
+  -webkit-user-select: none;
   overflow: hidden;
 }
 
@@ -56,6 +57,7 @@
   -webkit-app-region: drag;
 }
 
-input, button {
+.controls input,
+.controls button {
   -webkit-app-region: no-drag;
 }

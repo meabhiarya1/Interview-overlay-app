@@ -25,7 +25,7 @@ function App() {
 
   return (
     <div className="app">
-      <div className="controls" style={{ WebkitAppRegion: "drag" }}>
+      {/* <div className="controls" style={{ WebkitAppRegion: "drag" }}>
         <input
           type="text"
           value={url}
@@ -35,10 +35,10 @@ function App() {
         <button onClick={handleGo}>Go</button>
         <button onClick={handleBack}>Back</button>
         <button onClick={handleNewTab}>New Tab</button>
-      </div>
+      </div> */}
       <webview
         src="https://www.google.com"
-        style={{ width: "800px", height: "600px", border: "none" }}
+        style={{ width: "100vw", height: "100vh", border: "none" }}
         allowpopups="true"
         webpreferences="nativeWindowOpen=yes"
       ></webview>
