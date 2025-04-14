@@ -4,13 +4,6 @@ import "./App.css";
 function App() {
   const [url, setUrl] = useState("https://www.google.com");
 
-  const handleGo = () => {
-    const view = document.querySelector("webview");
-    if (view) {
-      view.loadURL(url);
-    }
-  };
-
   const handleBack = () => {
     const view = document.querySelector("webview");
     if (view && view.canGoBack()) {
@@ -25,17 +18,10 @@ function App() {
 
   return (
     <div className="app">
-      {/* <div className="controls" style={{ WebkitAppRegion: "drag" }}>
-        <input
-          type="text"
-          value={url}
-          onChange={(e) => setUrl(e.target.value)}
-          onKeyDown={(e) => e.key === "Enter" && handleGo()}
-        />
-        <button onClick={handleGo}>Go</button>
+      <div className="controls" style={{ WebkitAppRegion: "drag" }}>
         <button onClick={handleBack}>Back</button>
         <button onClick={handleNewTab}>New Tab</button>
-      </div> */}
+      </div>
       <webview
         src="https://www.google.com"
         style={{ width: "100vw", height: "100vh", border: "none" }}
