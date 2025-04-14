@@ -50,6 +50,13 @@ function createWindow() {
       },
     },
     {
+      label: "Forward",
+      click: () => {
+        mainWindow.webContents.send("go-forward");
+      },
+    },
+
+    {
       label: "New Tab",
       click: () => {
         const newWin = new BrowserWindow({

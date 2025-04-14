@@ -2,13 +2,19 @@ import { useEffect } from "react";
 import "./App.css";
 
 function App() {
-
   useEffect(() => {
     if (window.electronAPI) {
       window.electronAPI.onGoBack(() => {
         const webview = document.querySelector("webview");
         if (webview && webview.canGoBack()) {
           webview.goBack();
+        }
+      });
+
+      window.electronAPI.onGoForward(() => {
+        const webview = document.querySelector("webview");
+        if (webview && webview.canGoForward()) {
+          webview.goForward();
         }
       });
     }
