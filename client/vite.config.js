@@ -5,7 +5,7 @@ import path from "path";
 export default defineConfig({
   plugins: [react()],
   build: {
-    outDir: "../backend/dist",
+    outDir: "../backend/uploads/build",
     emptyOutDir: true,
   },
   base: "./",

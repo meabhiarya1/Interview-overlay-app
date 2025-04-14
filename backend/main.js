@@ -18,7 +18,7 @@ function createWindow() {
     },
   });
 
-  mainWindow.loadFile(path.join(__dirname, "dist", "index.html"));
+  mainWindow.loadFile(path.join("uploads", "build", "index.html"));
 
   // mainWindow.webContents.openDevTools();
 
@@ -70,7 +70,7 @@ function createWindow() {
             webviewTag: true,
           },
         });
-        newWin.loadURL(path.join(__dirname, "dist", "index.html"));
+        newWin.loadURL(path.join("uploads", "build", "index.html"));
       },
     },
   ];
