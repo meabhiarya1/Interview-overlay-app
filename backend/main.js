@@ -3,8 +3,8 @@ const path = require("path");
 
 function createWindow() {
   const win = new BrowserWindow({
-    width: 1000,
-    height: 800,
+    width: 800,
+    height: 600,
     alwaysOnTop: true,
     frame: false, // Frameless for custom draggable
     transparent: false,
@@ -12,6 +12,7 @@ function createWindow() {
       preload: path.join(__dirname, "preload.js"),
       nodeIntegration: true,
       contextIsolation: false,
+      webviewTag: true,
     },
   });
 
