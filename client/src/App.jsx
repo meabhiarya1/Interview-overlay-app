@@ -30,14 +30,14 @@ function App() {
   return (
     <div className="app">
       {/* Make the control bar draggable */}
-      <div className="controls">
+      {/* <div className="controls">
         <button onClick={handleBack} style={{ WebkitAppRegion: "no-drag" }}>
           Back
         </button>
         <button onClick={handleNewTab} style={{ WebkitAppRegion: "no-drag" }}>
           New Tab
         </button>
-      </div>
+      </div> */}
       <webview
         src="https://www.google.com"
         style={{ width: "100vw", height: "100vh", border: "none" }}
